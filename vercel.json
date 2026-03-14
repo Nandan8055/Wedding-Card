@@ -1,0 +1,22 @@
+{
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": "static",
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "regions": ["all"],
+  "env": [],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/invite",
+      "destination": "/invite.html"
+    }
+  ]
+}
