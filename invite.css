@@ -449,3 +449,63 @@ font-size:14px;
 }
 
 }
+
+
+
+/* Night temple */
+
+.Temple-night{
+padding:80px 20px 110px;
+background:linear-gradient(180deg, #330033 0%, #120412 45%, #000 100%);
+}
+
+.Temple-night h2{
+max-width:900px;
+margin:0 auto 28px;
+padding:0 16px;
+font-family:'Cinzel',serif;
+font-size:28px;
+line-height:1.5;
+color:#f6dc8f;
+text-shadow:0 0 18px rgba(246,220,143,0.28);
+}
+
+.Temple-night-slider{
+position:relative;
+width:min(92%, 1100px);
+margin:0 auto;
+overflow:hidden;
+border-radius:24px;
+box-shadow:0 24px 60px rgba(0,0,0,0.4);
+border:1px solid rgba(255,255,255,0.12);
+}
+
+.Temple-night-slider img{
+width:100%;
+height:auto;
+display:block;
+object-fit:cover;
+opacity:1;
+transform:none;
+transition:none;
+}
+
+@media (max-width:768px){
+
+.Temple-night{
+padding:56px 12px 90px;
+}
+
+.Temple-night h2{
+margin-bottom:18px;
+width:90%;
+padding:14px 16px;
+font-size:18px;
+}
+
+.Temple-night-slider{
+width:100%;
+border-radius:18px;
+}
+
+}
