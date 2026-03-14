@@ -1,12 +1,14 @@
 const openBtn = document.getElementById("openBtn")
+const hero = document.querySelector(".hero")
 
-if (openBtn) {
+if (openBtn && hero) {
     openBtn.addEventListener("click", function() {
-        document.querySelector('.hero').classList.add('animate-open');
+        hero.classList.add("animate-open")
+        openBtn.disabled = true
 
         setTimeout(() => {
             window.location.href = "invite.html"
-        }, 800);
+        }, 1000)
     })
 }
 
