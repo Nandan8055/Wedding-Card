@@ -145,12 +145,12 @@ button:focus-visible {
 
 @media (max-width: 768px) {
     .hero {
-        padding: 20px 14px 36px;
+        padding: 72px 14px 36px;
         gap: 10px;
     }
 
     .envelope-stage {
-        width: min(76vw, 320px);
+        width: min(68vw, 280px);
         margin-top: 4px;
     }
 
@@ -180,8 +180,8 @@ button:focus-visible {
     }
 
     button {
-        padding: 9px 18px;
-        font-size: 12px;
+        padding: 8px 16px;
+        font-size: 11px;
         top: 71%;
     }
     
