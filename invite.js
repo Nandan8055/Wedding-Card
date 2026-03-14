@@ -100,4 +100,4 @@ setTimeout(()=>{
 const text=document.querySelector(".invite-text")
 if(text) text.style.opacity="1"
 
-},5000)
+},2500)
