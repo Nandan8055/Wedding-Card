@@ -280,6 +280,7 @@ right:20px;
 @media (max-width:768px){
     body {
         overflow-x: hidden;
+        padding: 0; /* Removes the extra cream frame on the sides */
     }
 
     .invite-text h1 {
@@ -293,27 +294,33 @@ right:20px;
     }
 
     .invite-text p {
-        font-size: 2.5vw;
+        font-size: 3.2vw; /* Slightly larger for readability */
         margin: 2px 0;
+    }
+
+    .invite-text {
+        width: 85%; /* Give text more horizontal room */
+        top: 82%;   /* Adjust vertical position to avoid overlap */
     }
 
     .mapBtn {
         padding: 8px 15px;
-        font-size: 3vw;
+        font-size: 3.5vw;
         margin-top: 10px;
     }
 
     /* Scale down elements to prevent overlapping on narrow screens */
     .deity-left, .deity-right {
-        width: 18%;
+        width: 20%;
+        top: 62%; /* Pushed down slightly */
     }
     .deity-middle {
-        width: 25%;
-        top: 54%;
+        width: 30%;
+        top: 56%;
     }
     .couple-left, .couple-right {
-        width: 22%;
-        top: 72%;
+        width: 24%;
+        top: 74%;
     }
 
     .slider {
