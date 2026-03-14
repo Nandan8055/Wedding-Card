@@ -2,7 +2,6 @@
   "public": true,
   "cleanUrls": true,
   "trailingSlash": false,
-  "regions": ["all"],
   "env": {},
   "routes": [
     {
