@@ -1,4 +1,6 @@
-body{
+
+
+    body{
 margin:0;
 font-family:'Playfair Display', serif;
 background:#000;
@@ -11,15 +13,6 @@ text-align:center;
 
 .temple-section{
 position:relative;
-width: 100%;
-overflow: hidden;
-}
-
-.scene {
-position: relative;
-width: 100%;
-max-width: 1400px;
-margin: 0 auto;
 }
 
 .temple-img{
@@ -30,14 +23,13 @@ display:block;
 /* TEXT ON GREEN CARPET */
 
 .invite-text{
+
 position:absolute;
-top:84%;
+top:79%;
 left:50%;
 transform:translate(-50%,-50%);
-width:70%;
-z-index: 20;
+width:60%;
 }
-
 .invite-text h1{
 font-family:'Great Vibes',cursive;
 font-size:50px;
@@ -206,7 +198,7 @@ transition:opacity 2s;
 position:absolute;
 left:3%;
 top:70%;
-width:28%;
+width:520px;
 height:auto;
 border-radius:10px;
 box-shadow:0 8px 20px rgba(0,0,0,0.5);
@@ -217,7 +209,7 @@ z-index:10;
 position:absolute;
 right:3%;
 top:70%;
-width:25%;
+width:520px;
 height:auto;
 border-radius:10px;
 box-shadow:0 8px 20px rgba(0,0,0,0.5);
@@ -230,7 +222,7 @@ z-index:10;
 position:absolute;
 top:58.5%;
 left:20%;
-width:24%;
+width:450px;
 height:auto;
 z-index:9;
 }
@@ -239,17 +231,16 @@ z-index:9;
 position:absolute;
 top:59.8%;
 right:20%;
-width:24%;
-height:auto;
+width:auto;
 z-index:9 ;
 }
 
+
 .deity-middle{
 position:absolute;
-top:50%;
-left: 50%;
-transform: translateX(-50%);
-width:35%;
+top:52%;
+right:32%;
+width:650px;
 height:auto;
 z-index:9;
 }
@@ -278,58 +269,88 @@ right:20px;
 }
 /* MOBILE LAYOUT FIX */
 @media (max-width:768px){
-    body {
-        overflow-x: hidden;
-        padding: 0; /* Removes the extra cream frame on the sides */
-    }
 
-    .invite-text h1 {
-        font-size: 6vw;
-        margin-bottom: 5px;
-    }
+/* temple container becomes vertical layout */
+.temple-section{
+display:flex;
+flex-direction:column;
+align-items:center;
+position:relative;
+}
 
-    .invite-text h2 {
-        font-size: 4vw;
-        margin-top: 5px;
-    }
+/* invitation text becomes normal flow */
+.invite-text{
+position:relative;
+top:auto;
+left:auto;
+transform:none;
+width:90%;
+margin-top:20px;
+}
 
-    .invite-text p {
-        font-size: 3.2vw; /* Slightly larger for readability */
-        margin: 2px 0;
-    }
+/* couple images stack nicely */
+.couple-left,
+.couple-right{
+position:relative;
+top:auto;
+left:auto;
+right:auto;
+width:45%;
+margin:10px;
+}
 
-    .invite-text {
-        width: 85%; /* Give text more horizontal room */
-        top: 82%;   /* Adjust vertical position to avoid overlap */
-    }
+/* couple container */
+.couple-wrapper{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
 
-    .mapBtn {
-        padding: 8px 15px;
-        font-size: 3.5vw;
-        margin-top: 10px;
-    }
+/* deity images align above text */
+.deity-left,
+.deity-middle,
+.deity-right{
+position:relative;
+top:auto;
+left:auto;
+right:auto;
+width:80px;
+margin:5px;
+}
 
-    /* Scale down elements to prevent overlapping on narrow screens */
-    .deity-left, .deity-right {
-        width: 20%;
-        top: 62%; /* Pushed down slightly */
-    }
-    .deity-middle {
-        width: 30%;
-        top: 56%;
-    }
-    .couple-left, .couple-right {
-        width: 24%;
-        top: 74%;
-    }
+/* deity row */
+.deity-row{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
 
-    .slider {
-        height: 300px;
-    }
+/* temple image responsive */
+.temple-img{
+width:100%;
+height:auto;
+}
 
-    .floating-title {
-        font-size: 40px;
-    }
+/* slider responsive */
+.slider{
+width:95%;
+height:auto;
+}
+
+.slider img{
+width:100%;
+height:auto;
+object-fit:contain;
+}
+
+/* music button easier to tap */
+.music-btn{
+width:60px;
+height:60px;
+font-size:24px;
+}
 
 /* bells scale down */
 .bell{
