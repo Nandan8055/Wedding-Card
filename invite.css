@@ -265,172 +265,180 @@ left:20px;
 .bell-right{
 right:20px;
 }
-
 /* MOBILE OPTIMIZATION */
 @media (max-width: 768px) {
-    
-    /* Temple section responsive */
-    .invite-text {
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 85%;
-        padding: 10px;
+
+    body{
+        overflow-x:hidden;
     }
 
-    .invite-text h1 {
-        font-size: 28px;
-        margin: 10px 0;
+    /* Temple section */
+    .temple-img{
+        width:100%;
+        height:auto;
     }
 
-    .invite-text h2 {
-        font-size: 16px;
-        margin-top: 10px;
-        margin-bottom: 5px;
+    .invite-text{
+        position:absolute;
+        top:65%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width:90%;
+        text-align:center;
+        padding:10px;
     }
 
-    .invite-text p {
-        font-size: 14px;
-        line-height: 1.4;
-        margin: 5px 0;
+    .invite-text h1{
+        font-size:26px;
+        margin:8px 0;
     }
 
-    .mapBtn {
-        padding: 10px 20px;
-        font-size: 14px;
-        margin-top: 10px;
+    .invite-text h2{
+        font-size:15px;
+        margin:6px 0;
     }
 
-    /* Couple photos responsive */
-    .couple-left {
-        position: absolute;
-        left: 2%;
-        top: 52%;
-        width: 140px;
-        height: auto;
+    .invite-text p{
+        font-size:13px;
+        line-height:1.4;
     }
 
-    .couple-right {
-        position: absolute;
-        right: 2%;
-        top: 52%;
-        width: 140px;
-        height: auto;
+    .mapBtn{
+        padding:8px 18px;
+        font-size:13px;
     }
 
-    /* Deity images responsive */
-    .deity-left {
-        position: absolute;
-        top: 30%;
-        left: 10%;
-        width: 100px;
-        height: auto;
+    /* Couple photos */
+    .couple-left,
+    .couple-right{
+        width:120px;
+        height:auto;
+        top:55%;
     }
 
-    .deity-middle {
-        position: absolute;
-        top: 25%;
-        right: 18%;
-        width: 120px;
-        height: auto;
+    .couple-left{
+        left:3%;
     }
 
-    .deity-right {
-        position: absolute;
-        top: 30%;
-        right: 5%;
-        width: 100px;
-        height: auto;
+    .couple-right{
+        right:3%;
     }
 
-    /* Bells responsive */
-    .bell {
-        width: 80px;
-        top: -20px;
+    /* Deity images */
+    .deity-left,
+    .deity-right,
+    .deity-middle{
+        height:auto;
     }
 
-    .bell-left {
-        left: 10px;
+    .deity-left{
+        width:90px;
+        left:8%;
+        top:32%;
     }
 
-    .bell-right {
-        right: 10px;
+    .deity-middle{
+        width:110px;
+        right:20%;
+        top:28%;
     }
 
-    /* Gallery responsive */
-    .gallery {
-        padding: 40px 15px;
+    .deity-right{
+        width:90px;
+        right:8%;
+        top:32%;
     }
 
-    .gallery h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
+    /* Bells */
+    .bell{
+        width:80px;
+        top:-15px;
     }
 
-    .slider {
-        width: 90%;
-        height: 300px;
+    .bell-left{
+        left:10px;
     }
 
-    /* Floating title responsive */
-    .floating-title {
-        font-size: 28px;
-        top: 50%;
-        text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    .bell-right{
+        right:10px;
     }
 
-    /* Lanterns - reduce for performance */
-    .lantern {
-        width: 40px;
-        bottom: -80px;
+    /* Gallery */
+    .gallery{
+        padding:40px 10px;
     }
+
+    .gallery h2{
+        font-size:22px;
+    }
+
+    .slider{
+        width:95%;
+        height:320px;
+    }
+
+    .slider img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+    }
+
+    /* Floating title */
+    .floating-title{
+        font-size:26px;
+        top:50%;
+    }
+
+    /* Lantern performance */
+    .lantern{
+        width:35px;
+    }
+
 }
 
-/* Extra small devices (phones < 480px) */
-@media (max-width: 480px) {
-    
-    .invite-text {
-        top: 55%;
-        width: 90%;
-        padding: 8px;
+
+/* SMALL PHONES */
+@media (max-width: 480px){
+
+    .invite-text{
+        top:60%;
+        width:95%;
     }
 
-    .invite-text h1 {
-        font-size: 22px;
+    .invite-text h1{
+        font-size:20px;
     }
 
-    .invite-text h2 {
-        font-size: 14px;
-        margin-top: 8px;
+    .invite-text h2{
+        font-size:13px;
     }
 
-    .invite-text p {
-        font-size: 12px;
-        line-height: 1.3;
+    .invite-text p{
+        font-size:12px;
     }
 
     .couple-left,
-    .couple-right {
-        width: 90px;
-        top: 48%;
+    .couple-right{
+        width:85px;
+        top:52%;
     }
 
     .deity-left,
-    .deity-middle,
-    .deity-right {
-        width: 70px;
+    .deity-right,
+    .deity-middle{
+        width:65px;
     }
 
-    .bell {
-        width: 60px;
+    .bell{
+        width:55px;
     }
 
-    .slider {
-        height: 240px;
+    .slider{
+        height:240px;
     }
 
-    .floating-title {
-        font-size: 20px;
+    .floating-title{
+        font-size:18px;
     }
+
 }
