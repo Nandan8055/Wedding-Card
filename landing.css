@@ -94,6 +94,8 @@ body {
     align-items: center;
     z-index: 2;
     margin-top: 6px;
+    animation: envelope-sway 5.8s ease-in-out 1.4s infinite;
+    transform-origin: 50% 62%;
 }
 
 .subtitle {
@@ -126,6 +128,55 @@ button {
     box-shadow: 0 14px 28px rgba(123, 77, 25, 0.18);
     transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
     z-index: 3;
+}
+
+.sparkle-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.sparkle {
+    position: absolute;
+    width: var(--size, 12px);
+    height: var(--size, 12px);
+    left: var(--x, 50%);
+    top: var(--y, 50%);
+    border-radius: 65% 35% 60% 40%;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255, 235, 245, 0.95) 0%, rgba(246, 146, 196, 0.92) 52%, rgba(220, 90, 160, 0.88) 78%);
+    box-shadow: 0 0 14px rgba(230, 118, 178, 0.3);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    animation: blossom-float var(--dur, 5.8s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+}
+
+.sparkle::before,
+.sparkle::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: rgba(255, 214, 234, 0.8);
+    transform: translate(-50%, -50%);
+    border-radius: 999px;
+}
+
+.sparkle::before {
+    width: calc(var(--size, 12px) * 0.72);
+    height: calc(var(--size, 12px) * 1.24);
+    border-radius: 60% 40% 65% 35%;
+    transform: translate(-16%, -50%) rotate(32deg);
+}
+
+.sparkle::after {
+    width: calc(var(--size, 12px) * 0.7);
+    height: calc(var(--size, 12px) * 1.2);
+    border-radius: 35% 65% 40% 60%;
+    transform: translate(-86%, -50%) rotate(-28deg);
 }
 
 button:hover {
@@ -184,6 +235,10 @@ button:focus-visible {
         font-size: 11px;
         top: 71%;
     }
+
+    .sparkle-layer {
+        inset: 0;
+    }
     
     .flower-wrapper {
         transform: scale(0.34);
@@ -232,6 +287,7 @@ button:focus-visible {
     .envelope-bg,
     .hero-copy,
     .subtitle,
+    .envelope-stage,
     button,
     .flower-wrapper,
     .flower-wrapper * {
@@ -241,6 +297,45 @@ button:focus-visible {
 
     .landing-page.not-loaded * {
         animation-play-state: running !important;
+    }
+}
+
+@keyframes envelope-sway {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(1px) rotate(0.55deg);
+    }
+
+    50% {
+        transform: translateY(-1px) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(1px) rotate(-0.55deg);
+    }
+}
+
+@keyframes blossom-float {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 8px) rotate(0deg) scale(0.72);
+    }
+
+    20% {
+        opacity: 0.88;
+    }
+
+    50% {
+        opacity: 0.96;
+        transform: translate(-50%, -10px) rotate(14deg) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -22px) rotate(-10deg) scale(0.82);
     }
 }
 
