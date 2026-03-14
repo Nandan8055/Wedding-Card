@@ -1,6 +1,4 @@
 {
-  "buildCommand": "npm run build",
-  "installCommand": "npm install",
   "framework": "static",
   "public": true,
   "cleanUrls": true,
