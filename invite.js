@@ -1,74 +1,69 @@
 const bellSound = document.getElementById("bellSound")
+const music = document.getElementById("weddingMusic")
 
-document.querySelectorAll(".bell").forEach(bell => {
-
+document.querySelectorAll(".bell").forEach((bell) => {
 bell.addEventListener("click", () => {
-
 bellSound.currentTime = 0
 bellSound.play()
-
 })
-
 })
 
 // MUSIC BUTTON
 
-const music = document.getElementById("weddingMusic")
-
 const btn = document.createElement("button")
+btn.className = "music-toggle"
 
-btn.innerHTML="🎵"
+function updateMusicButton() {
+btn.textContent = music.paused ? "Play Music" : "Pause Music"
+btn.setAttribute("aria-pressed", String(!music.paused))
+}
 
-Object.assign(btn.style,{
-position:"fixed",
-bottom:"20px",
-right:"20px",
-width:"50px",
-height:"50px",
-borderRadius:"50%",
-border:"none",
-background:"#fff",
-fontSize:"24px",
-cursor:"pointer",
-zIndex:"1000"
-})
+async function playWeddingMusic() {
+try {
+await music.play()
+} catch (error) {
+// Some browsers may still block autoplay; the button remains available.
+}
 
-btn.onclick=()=>{
-if(music.paused){music.play()}
-else{music.pause()}
+updateMusicButton()
+}
+
+btn.onclick = async () => {
+if (music.paused) {
+await playWeddingMusic()
+} else {
+music.pause()
+updateMusicButton()
+}
 }
 
 document.body.appendChild(btn)
+updateMusicButton()
 
-
+if (sessionStorage.getItem("autoplayWeddingMusic") === "true") {
+sessionStorage.removeItem("autoplayWeddingMusic")
+playWeddingMusic()
+}
 
 // LANTERNS
 
-function createLantern(){
+function createLantern() {
+const container = document.querySelector(".lantern-container")
+const lantern = document.createElement("img")
 
-const container=document.querySelector(".lantern-container")
+lantern.src = "images/lantern.png"
+lantern.className = "lantern"
+lantern.style.left = Math.random() * 100 + "vw"
 
-const lantern=document.createElement("img")
-
-lantern.src="images/lantern.png"
-
-lantern.className="lantern"
-
-lantern.style.left=Math.random()*100+"vw"
-
-const duration=8+Math.random()*5
-
-lantern.style.animationDuration=duration+"s"
+const duration = 8 + Math.random() * 5
+lantern.style.animationDuration = duration + "s"
 
 container.appendChild(lantern)
 
-setTimeout(()=>lantern.remove(),duration*1000)
-
+setTimeout(() => lantern.remove(), duration * 1000)
 }
 
-setInterval(createLantern,1200)
-
-
+setInterval(createLantern, 1200)
 
 // GALLERY SLIDER
 
@@ -76,28 +71,24 @@ const slides = document.querySelectorAll(".slider img")
 
 let current = 0
 
-function showSlide(index){
-slides.forEach(img => img.classList.remove("active"))
+function showSlide(index) {
+slides.forEach((img) => img.classList.remove("active"))
 slides[index].classList.add("active")
 }
 
 showSlide(current)
 
-setInterval(()=>{
-
+setInterval(() => {
 current++
 
-if(current >= slides.length){
+if (current >= slides.length) {
 current = 0
 }
 
 showSlide(current)
+}, 3000)
 
-},5000)
-
-setTimeout(()=>{
-
-const text=document.querySelector(".invite-text")
-if(text) text.style.opacity="1"
-
-},2500)
+setTimeout(() => {
+const text = document.querySelector(".invite-text")
+if (text) text.style.opacity = "1"
+}, 2500)
