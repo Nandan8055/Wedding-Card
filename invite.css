@@ -578,6 +578,67 @@ line-height:1.6;
 color:rgba(255,255,255,0.86);
 }
 
+.countdown-note{
+margin-top:24px;
+}
+
+.countdown-signature-wrap{
+display:flex;
+flex-direction:column;
+align-items:flex-end;
+width:min(84%, 760px);
+margin:16px auto 0;
+padding-right:18px;
+}
+
+.countdown-signature{
+margin:0;
+font-family:'Ephesis','Great Vibes',cursive;
+font-size:30px;
+line-height:0.95;
+color:#ffd86a;
+text-shadow:
+0 0 10px rgba(255,216,106,0.28),
+0 0 18px rgba(255,216,106,0.16);
+text-align:right;
+}
+
+.countdown-signature-line{
+display:block;
+width:172px;
+height:18px;
+margin-top:0;
+position:relative;
+transform:rotate(-8deg);
+}
+
+.countdown-signature-line::before,
+.countdown-signature-line::after{
+content:"";
+position:absolute;
+background:rgba(255,216,106,0.95);
+box-shadow:0 0 10px rgba(255,216,106,0.4);
+}
+
+.countdown-signature-line::before{
+left:0;
+width:100%;
+height:100%;
+bottom:0;
+border-bottom:2px solid rgba(255,216,106,0.95);
+border-radius:0 0 999px 999px;
+box-shadow:0 0 10px rgba(255,216,106,0.32);
+clip-path:path("M 2 14 Q 56 18 92 10 T 170 11");
+}
+
+.countdown-signature-line::after{
+right:-1px;
+bottom:5px;
+width:7px;
+height:7px;
+border-radius:50%;
+}
+
 .countdown-grid{
 display:grid;
 grid-template-columns:repeat(4, minmax(0, 1fr));
@@ -653,6 +714,27 @@ line-height:1.35;
 .countdown-note{
 font-size:13px;
 line-height:1.5;
+}
+
+.countdown-note{
+margin-top:18px;
+}
+
+.countdown-signature-wrap{
+width:min(94%, 420px);
+margin:12px auto 0;
+padding-right:8px;
+}
+
+.countdown-signature{
+margin:0;
+font-size:22px;
+}
+
+.countdown-signature-line{
+width:122px;
+height:14px;
+margin-top:-1px;
 }
 
 .countdown-grid{
