@@ -92,3 +92,47 @@ setTimeout(() => {
 const text = document.querySelector(".invite-text")
 if (text) text.style.opacity = "1"
 }, 2500)
+
+// COUNTDOWN
+
+const countdownTarget = new Date("2026-04-22T19:00:00+05:30")
+const countdownElements = {
+days: document.getElementById("countdown-days"),
+hours: document.getElementById("countdown-hours"),
+minutes: document.getElementById("countdown-minutes"),
+seconds: document.getElementById("countdown-seconds"),
+note: document.getElementById("countdown-note")
+}
+
+function padCountdown(value) {
+return String(value).padStart(2, "0")
+}
+
+function renderCountdown() {
+const now = new Date()
+const difference = countdownTarget.getTime() - now.getTime()
+
+if (difference <= 0) {
+countdownElements.days.textContent = "00"
+countdownElements.hours.textContent = "00"
+countdownElements.minutes.textContent = "00"
+countdownElements.seconds.textContent = "00"
+countdownElements.note.textContent = "Today is the day. We are getting married."
+return
+}
+
+const totalSeconds = Math.floor(difference / 1000)
+const days = Math.floor(totalSeconds / 86400)
+const hours = Math.floor((totalSeconds % 86400) / 3600)
+const minutes = Math.floor((totalSeconds % 3600) / 60)
+const seconds = totalSeconds % 60
+
+countdownElements.days.textContent = padCountdown(days)
+countdownElements.hours.textContent = padCountdown(hours)
+countdownElements.minutes.textContent = padCountdown(minutes)
+countdownElements.seconds.textContent = padCountdown(seconds)
+countdownElements.note.textContent = "Reception on 22 April 2026 at 7:00 PM"
+}
+
+renderCountdown()
+setInterval(renderCountdown, 1000)

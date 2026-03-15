@@ -139,7 +139,7 @@ left:0;
 width:100%;
 height:100%;
 pointer-events:none;
-z-index:5;
+z-index:3;
 }
 
 .lantern{
@@ -531,6 +531,86 @@ transform:none;
 transition:none;
 }
 
+.countdown-section{
+position:relative;
+padding:28px 20px 120px;
+background:
+radial-gradient(circle at top, rgba(255,215,0,0.18), transparent 34%),
+linear-gradient(180deg, #050205 0%, #1a0818 45%, #050205 100%);
+}
+
+.countdown-card{
+position:relative;
+z-index:8;
+width:min(84%, 760px);
+margin:0 auto;
+padding:30px 26px;
+border-radius:28px;
+border:1px solid rgba(255,255,255,0.12);
+background:rgba(17, 8, 18, 0.84);
+box-shadow:0 24px 70px rgba(0,0,0,0.35);
+backdrop-filter:blur(8px);
+}
+
+.countdown-eyebrow{
+margin:0 0 10px;
+font-family:'Cinzel',serif;
+font-size:12px;
+letter-spacing:0.18em;
+text-transform:uppercase;
+color:#f6dc8f;
+}
+
+.countdown-card h2{
+margin:0;
+font-family:'Cinzel',serif;
+font-size:28px;
+line-height:1.3;
+color:#ffd86a;
+}
+
+.countdown-message,
+.countdown-note{
+max-width:620px;
+margin:14px auto 0;
+font-size:16px;
+line-height:1.6;
+color:rgba(255,255,255,0.86);
+}
+
+.countdown-grid{
+display:grid;
+grid-template-columns:repeat(4, minmax(0, 1fr));
+gap:16px;
+margin-top:24px;
+}
+
+.countdown-unit{
+padding:18px 12px;
+border-radius:18px;
+background:linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
+border:1px solid rgba(255,216,106,0.2);
+box-shadow:inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.countdown-number{
+display:block;
+font-family:'Cinzel',serif;
+font-size:34px;
+font-weight:700;
+line-height:1;
+color:#fff4c6;
+}
+
+.countdown-label{
+display:block;
+margin-top:8px;
+font-size:12px;
+letter-spacing:0.12em;
+text-transform:uppercase;
+color:#f6dc8f;
+}
+
 @media (max-width:768px){
 
 .Temple-night{
@@ -547,6 +627,52 @@ font-size:18px;
 .Temple-night-slider{
 width:100%;
 border-radius:18px;
+}
+
+.countdown-section{
+padding:22px 12px 96px;
+}
+
+.countdown-card{
+width:min(94%, 420px);
+padding:22px 16px;
+border-radius:20px;
+}
+
+.countdown-eyebrow{
+font-size:10px;
+letter-spacing:0.12em;
+}
+
+.countdown-card h2{
+font-size:18px;
+line-height:1.35;
+}
+
+.countdown-message,
+.countdown-note{
+font-size:13px;
+line-height:1.5;
+}
+
+.countdown-grid{
+grid-template-columns:repeat(2, minmax(0, 1fr));
+gap:10px;
+margin-top:18px;
+}
+
+.countdown-unit{
+padding:14px 10px;
+border-radius:16px;
+}
+
+.countdown-number{
+font-size:24px;
+}
+
+.countdown-label{
+font-size:10px;
+margin-top:6px;
 }
 
 }
