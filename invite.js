@@ -1,12 +1,24 @@
 const bellSound = document.getElementById("bellSound")
 const music = document.getElementById("weddingMusic")
+const bellHints = document.querySelectorAll(".bell-hint")
 
 document.querySelectorAll(".bell").forEach((bell) => {
 bell.addEventListener("click", () => {
 bellSound.currentTime = 0
 bellSound.play()
+bellHints.forEach((hint) => hint.classList.remove("is-visible"))
 })
 })
+
+if (bellHints.length) {
+setTimeout(() => {
+bellHints.forEach((hint) => hint.classList.add("is-visible"))
+}, 1200)
+
+setTimeout(() => {
+bellHints.forEach((hint) => hint.classList.remove("is-visible"))
+}, 5200)
+}
 
 // MUSIC BUTTON
 
