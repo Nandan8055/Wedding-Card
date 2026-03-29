@@ -337,12 +337,69 @@ right:20px;
 position:relative;
 top:-30px;
 width:150px;
+display:inline-block;
+transform-origin:center bottom;
 cursor:pointer;
 transition:transform 0.2s;
 }
 
 .bell:hover{
 transform:scale(1.1);
+}
+
+/* BELL ANIMATIONS */
+
+@keyframes bellShake{
+0%, 100%{
+transform:rotate(0deg);
+}
+15%{
+transform:rotate(-8deg);
+}
+30%{
+transform:rotate(8deg);
+}
+45%{
+transform:rotate(-8deg);
+}
+60%{
+transform:rotate(8deg);
+}
+75%{
+transform:rotate(-4deg);
+}
+}
+
+@keyframes bellBounce{
+0%, 100%{
+transform:translateY(0);
+}
+25%{
+transform:translateY(-10px);
+}
+50%{
+transform:translateY(-18px);
+}
+75%{
+transform:translateY(-10px);
+}
+}
+
+@keyframes bellGlow{
+0%, 100%{
+filter:brightness(1) drop-shadow(0 0 0 rgba(255,215,0,0));
+}
+50%{
+filter:brightness(1.25) drop-shadow(0 0 20px rgba(255,215,0,0.85));
+}
+}
+
+.bell.bounce{
+animation:bellBounce 0.6s ease-in-out;
+}
+
+.bell.glow{
+animation:bellGlow 0.6s ease-in-out;
 }
 
 .bell-hint{

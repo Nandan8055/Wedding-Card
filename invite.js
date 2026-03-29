@@ -4,9 +4,32 @@ const bellHints = document.querySelectorAll(".bell-hint")
 
 document.querySelectorAll(".bell").forEach((bell) => {
 bell.addEventListener("click", () => {
-bellSound.currentTime = 0
-bellSound.play()
-bellHints.forEach((hint) => hint.classList.remove("is-visible"))
+  bellSound.currentTime = 0
+  bellSound.play()
+  bellHints.forEach((hint) => hint.classList.remove("is-visible"))
+
+  // Reset glow class and re-trigger it
+  bell.classList.remove("glow")
+  void bell.offsetWidth
+  bell.classList.add("glow")
+
+  // Direct JS bounce animation (upwards and back)
+  bell.animate(
+    [
+      { transform: "translateY(0)" },
+      { transform: "translateY(-40px)" },
+      { transform: "translateY(0)" }
+    ],
+    {
+      duration: 900,
+      easing: "cubic-bezier(0.4, 0, 0.2, 1)"
+    }
+  )
+
+  // Remove glow after animation sheen finishes
+  setTimeout(() => {
+    bell.classList.remove("glow")
+  }, 700)
 })
 })
 
