@@ -93,6 +93,43 @@ const text = document.querySelector(".invite-text")
 if (text) text.style.opacity = "1"
 }, 2500)
 
+// MOBILE SCROLL CUE
+
+const scrollCue = document.querySelector(".scroll-cue")
+const mobileMediaQuery = window.matchMedia("(max-width: 768px)")
+
+function updateScrollCue() {
+if (!scrollCue) return
+
+if (!mobileMediaQuery.matches) {
+scrollCue.classList.remove("is-visible")
+return
+}
+
+const scrollBottom = window.scrollY + window.innerHeight
+const pageBottom = document.documentElement.scrollHeight
+const hideThreshold = 180
+
+scrollCue.classList.toggle("is-visible", scrollBottom < pageBottom - hideThreshold)
+}
+
+if (scrollCue) {
+scrollCue.addEventListener("click", (event) => {
+event.preventDefault()
+window.scrollBy({
+top: Math.max(window.innerHeight * 0.85, 420),
+behavior: "smooth"
+})
+})
+
+updateScrollCue()
+window.addEventListener("scroll", updateScrollCue, { passive: true })
+window.addEventListener("resize", updateScrollCue)
+if (typeof mobileMediaQuery.addEventListener === "function") {
+mobileMediaQuery.addEventListener("change", updateScrollCue)
+}
+}
+
 // COUNTDOWN
 
 const countdownTarget = new Date("2026-04-22T19:00:00+05:30")
