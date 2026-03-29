@@ -203,7 +203,7 @@ countdownElements.days.textContent = padCountdown(days)
 countdownElements.hours.textContent = padCountdown(hours)
 countdownElements.minutes.textContent = padCountdown(minutes)
 countdownElements.seconds.textContent = padCountdown(seconds)
-countdownElements.note.textContent = "Reception on 22 April 2026 at 7:00 PM"
+countdownElements.note.textContent = "Reception on 22 April 2026 at 7:00 PM onwards"
 }
 
 renderCountdown()
