@@ -5,6 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nandan & Nikitha Wedding</title>
+<script>
+if (sessionStorage.getItem("inviteAccessGranted") !== "true") {
+    window.location.replace("index.html")
+}
+</script>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="invite.css">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Ephesis&family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">

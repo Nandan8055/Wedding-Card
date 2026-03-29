@@ -43,6 +43,7 @@ if (sparkleLayer) {
 if (openBtn && hero) {
     openBtn.addEventListener("click", function() {
         sessionStorage.setItem("autoplayWeddingMusic", "true")
+        sessionStorage.setItem("inviteAccessGranted", "true")
         hero.classList.add("animate-open")
         openBtn.disabled = true
 
